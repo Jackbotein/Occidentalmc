@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Occidental Mission Critical — Recruiting for the mission critical lifecycle</title>
+<meta name="description" content="US-based recruiting for data center and mission critical firms. Site selection through Level 5 commissioning. 90-day replacement guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --steel-950:#0A1319; --steel-900:#0F1D26; --steel-800:#16252E; --steel-700:#22343F;
+  --steel-500:#4C6270; --steel-300:#93A5AF;
+  --paper:#F1F3F2; --paper-2:#E4E8E7; --line:#C9D1D0;
+  --signal:#E4B429; --signal-hot:#FFD23F; --live:#3FA37A; --fault:#C4462F; --amber:#D98A21;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --rail:104px; --pad:clamp(20px,4vw,56px); --maxw:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+body{margin:0;background:var(--paper);color:var(--steel-900);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.02em}
+p{margin:0 0 1em}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+.sheet{display:grid;grid-template-columns:var(--rail) minmax(0,1fr)}
+.sheet-rail{border-right:1px solid var(--line);padding-top:6px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--steel-500)}
+.sheet-rail b{display:block;font-weight:500;color:var(--steel-900)}
+.sheet-rail span{display:block;margin-top:6px;max-width:72px;line-height:1.35}
+.sheet-body{padding-left:clamp(20px,3.4vw,44px);min-width:0}
+.dark .sheet-rail{border-color:rgba(255,255,255,.14);color:var(--steel-300)}
+.dark .sheet-rail b{color:var(--signal)}
+@media (max-width:820px){
+  .sheet{grid-template-columns:1fr}
+  .sheet-rail{border-right:0;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:22px;display:flex;gap:14px;align-items:baseline}
+  .sheet-rail span{margin-top:0;max-width:none}
+  .dark .sheet-rail{border-color:rgba(255,255,255,.14)}
+  .sheet-body{padding-left:0}
+}
+section{padding:clamp(60px,8vw,112px) 0}
+.dark{background:var(--steel-950);color:#fff}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:60;background:var(--steel-950);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.nav-in{display:flex;align-items:center;gap:28px;height:60px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:0 0 auto}
+.brand-mark{width:22px;height:22px;flex:0 0 auto}
+.brand-txt{font-family:var(--display);font-weight:700;font-size:14.5px;letter-spacing:.02em;font-stretch:112%}
+.brand-txt em{font-style:normal;color:var(--steel-300);font-weight:500}
+
+/* hero */
+.hero{background:var(--steel-950);color:#fff;padding-top:clamp(56px,7vw,96px);padding-bottom:0;overflow:hidden}
+.hero h1{font-size:clamp(40px,7.4vw,92px);font-weight:700;font-stretch:118%;letter-spacing:-.035em;max-width:15ch}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:end;margin-top:36px}
+.hero-lede{font-size:clamp(17px,1.5vw,19.5px);color:#C6D2D8;max-width:56ch}
+.hero-lede strong{color:#fff;font-weight:600}
+.btn{display:inline-block;padding:14px 22px;border-radius:2px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--signal);color:var(--steel-950)}
+.btn-primary:hover{background:var(--signal-hot)}
+.plate{border:1px solid rgba(255,255,255,.2);background:linear-gradient(180deg,#16252E,#101E27);padding:22px 24px 20px;position:relative}
+.plate::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--signal)}
+.plate .pl-num{font-family:var(--display);font-weight:700;font-stretch:118%;font-size:44px;line-height:1;color:var(--signal)}
+.plate .pl-t{font-family:var(--display);font-weight:600;font-size:16px;margin-top:8px;font-stretch:112%}
+.plate .pl-d{font-size:14px;color:#A9BAC4;margin:8px 0 0;line-height:1.5}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;align-items:start}}
+.busline{margin-top:clamp(44px,6vw,72px);border-top:1px solid rgba(255,255,255,.12);padding:22px 0 30px}
+.bus-svg{width:100%;height:78px;display:block}
+.bus-path{stroke:var(--steel-700);stroke-width:2;fill:none}
+.bus-energize{stroke:var(--signal);stroke-width:2;fill:none;stroke-dasharray:1000;stroke-dashoffset:1000;animation:energize 2.1s .35s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes energize{to{stroke-dashoffset:0}}
+.bus-node circle{fill:var(--steel-950);stroke:var(--signal);stroke-width:2}
+.bus-node text{font-family:var(--mono);font-size:10.5px;fill:#93A5AF;letter-spacing:.04em}
+.bus-node .bn-name{font-family:var(--body);font-size:12.5px;fill:#DDE6EA;font-weight:500;letter-spacing:0}
+@media (prefers-reduced-motion:reduce){.bus-energize{stroke-dashoffset:0}}
+
+/* headings */
+.h-sec{font-size:clamp(28px,3.9vw,50px);font-weight:700;font-stretch:114%;letter-spacing:-.028em;max-width:19ch}
+.h-sub{font-size:clamp(22px,2.6vw,30px);font-weight:700;font-stretch:112%;letter-spacing:-.024em;max-width:24ch}
+.sec-lede{font-size:clamp(16px,1.4vw,18.5px);color:var(--steel-500);max-width:62ch;margin-top:18px}
+.dark .sec-lede{color:#A9BAC4}
+
+/* problem */
+.ledger{margin-top:44px;border-top:1px solid var(--line)}
+.led-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(18px,4vw,56px);padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+.led-k{font-family:var(--display);font-weight:600;font-size:19px;font-stretch:110%;letter-spacing:-.015em;display:flex;gap:12px}
+.led-k i{font-style:normal;color:var(--fault);font-family:var(--mono);font-size:12px;padding-top:5px}
+.led-v{color:var(--steel-500);font-size:16px;margin:0}
+@media (max-width:760px){.led-row{grid-template-columns:1fr;gap:8px}}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:48px;border:1px solid var(--line)}
+.cmp>div{background:var(--paper);padding:26px}
+.cmp h4{font-size:17px;font-weight:600;font-stretch:110%;margin-bottom:14px}
+.cmp ul{margin:0;padding-left:18px;color:var(--steel-500);font-size:15.5px}
+.cmp li{margin-bottom:9px}
+.cmp .ours{background:var(--steel-950);color:#fff}
+.cmp .ours ul{color:#B7C6CE}
+.cmp .ours h4{color:var(--signal)}
+@media (max-width:700px){.cmp{grid-template-columns:1fr}}
+
+/* guarantee */
+.gtee{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:44px}
+.gtee>div{background:var(--steel-950);padding:28px}
+.gtee b{display:block;font-family:var(--display);font-weight:600;font-size:17px;font-stretch:110%;margin-bottom:9px;color:var(--signal)}
+.gtee p{margin:0;color:#B7C6CE;font-size:15.5px}
+@media (max-width:700px){.gtee{grid-template-columns:1fr}}
+
+/* timeline */
+.tl{margin-top:44px}
+.tl-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--steel-500);padding-bottom:6px;border-bottom:1px solid var(--line)}
+.tl-track{display:grid;gap:10px;margin-top:14px}
+.tl-bar{position:relative;height:56px;background:transparent;border:0;padding:0;cursor:pointer;width:100%;display:block}
+.tl-fill{position:absolute;top:0;bottom:0;background:var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;padding:0 14px;gap:10px;min-width:0;transition:background .2s ease,border-color .2s ease}
+.tl-bar:hover .tl-fill{border-color:var(--steel-500)}
+.tl-bar[aria-pressed="true"] .tl-fill{background:var(--steel-950);border-color:var(--steel-950)}
+.tl-bar[aria-pressed="true"] .tl-ph{color:var(--signal)}
+.tl-bar[aria-pressed="true"] .tl-nm{color:#fff}
+.tl-bar[aria-pressed="true"] .tl-mo{color:#93A5AF}
+.tl-ph{font-family:var(--mono);font-size:11px;color:var(--steel-500);flex:0 0 auto}
+.tl-nm{font-family:var(--display);font-weight:600;font-size:15.5px;font-stretch:110%;letter-spacing:-.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-mo{font-family:var(--mono);font-size:11px;color:var(--steel-500);margin-left:auto;flex:0 0 auto}
+@media (max-width:700px){.tl-mo{display:none}.tl-nm{font-size:13.5px}}
+.tl-panel{margin-top:30px;border-top:2px solid var(--steel-950);padding-top:26px}
+.tl-panel-h{display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;justify-content:space-between}
+.tl-panel-h h3{font-size:clamp(22px,2.8vw,32px);font-weight:700;font-stretch:112%;letter-spacing:-.025em}
+.tl-when{font-family:var(--mono);font-size:12px;color:var(--steel-500)}
+.tl-desc{color:var(--steel-500);max-width:64ch;margin-top:12px}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px}
+.role{background:var(--paper);padding:20px}
+.role b{display:block;font-family:var(--display);font-weight:600;font-size:15.5px;font-stretch:108%;letter-spacing:-.012em;margin-bottom:7px}
+.role p{margin:0;font-size:14.5px;color:var(--steel-500);line-height:1.5}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:44px;border-top:1px solid rgba(255,255,255,.15)}
+.step{padding:26px 24px 26px 0;border-right:1px solid rgba(255,255,255,.15)}
+.step:last-child{border-right:0}
+.step:not(:first-child){padding-left:24px}
+.step i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--signal);display:block;margin-bottom:12px}
+.step b{display:block;font-family:var(--display);font-weight:600;font-size:17px;font-stretch:110%;margin-bottom:8px}
+.step p{margin:0;font-size:14.5px;color:#A9BAC4}
+@media (max-width:820px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid rgba(255,255,255,.15);padding-left:0!important}}
+
+/* ---- sourcing thesis: stats + crossover ---- */
+.statstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.statstrip>div{background:#fff;padding:20px}
+.statstrip b{display:block;font-family:var(--display);font-weight:700;font-stretch:114%;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.03em;line-height:1}
+.statstrip span{display:block;font-size:13.5px;color:var(--steel-500);margin-top:9px;line-height:1.45}
+.statstrip a{font-family:var(--mono);font-size:10.5px;color:var(--steel-500);text-decoration:underline;text-underline-offset:3px;display:inline-block;margin-top:9px}
+.statstrip a:hover{color:var(--steel-900)}
+@media (max-width:860px){.statstrip{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.statstrip{grid-template-columns:1fr}}
+
+
+/* ---- radar: compact ---- */
+.radar-sec{padding:clamp(48px,6vw,80px) 0;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.radar-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.6fr);gap:clamp(26px,4vw,56px);align-items:start}
+@media (max-width:900px){.radar-grid{grid-template-columns:1fr}}
+.radar-copy p{font-size:15.5px;color:var(--steel-500)}
+.radar-copy .mini-note{font-size:13px;color:var(--steel-500);border-left:2px solid var(--signal);padding-left:12px;margin-top:18px}
+.feed{border:1px solid var(--line);background:#fff}
+.feed-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid var(--line);background:var(--paper)}
+.feed-head b{font-family:var(--display);font-size:13.5px;font-weight:600;font-stretch:110%;display:flex;align-items:center;gap:9px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--live);box-shadow:0 0 0 3px rgba(63,163,122,.16)}
+.feed-head span{font-family:var(--mono);font-size:10.5px;color:var(--steel-500)}
+.filt{display:flex;gap:6px;padding:11px 15px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.filt button{background:#fff;border:1px solid var(--line);color:var(--steel-500);padding:5px 10px;font-size:12.5px;border-radius:2px;cursor:pointer}
+.filt button[aria-pressed="true"]{background:var(--steel-950);border-color:var(--steel-950);color:var(--signal)}
+.ev{padding:15px;border-bottom:1px solid var(--line)}
+.ev:last-child{border-bottom:0}
+.ev-top{display:flex;flex-wrap:wrap;gap:9px;align-items:baseline}
+.ev-date{font-family:var(--mono);font-size:11px;color:var(--steel-500);flex:0 0 auto}
+.ev-co{font-family:var(--display);font-weight:600;font-size:15.5px;font-stretch:108%;letter-spacing:-.012em}
+.ev-tag{font-family:var(--mono);font-size:10.5px;padding:2px 7px;border:1px solid;border-radius:2px;margin-left:auto;flex:0 0 auto}
+.t-ch11{color:var(--fault);border-color:rgba(196,70,47,.45);background:rgba(196,70,47,.07)}
+.t-ch7{color:#8A2B1C;border-color:rgba(138,43,28,.45);background:rgba(138,43,28,.07)}
+.t-layoff{color:var(--amber);border-color:rgba(217,138,33,.5);background:rgba(217,138,33,.08)}
+.ev p{margin:8px 0 0;font-size:14.5px;color:var(--steel-500)}
+.ev-meta{font-family:var(--mono);font-size:11px;color:var(--steel-500);margin-top:9px}
+.ev-roles{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.ev-roles span{font-size:12px;border:1px solid var(--line);padding:3px 8px;color:var(--steel-700);background:var(--paper)}
+.ev-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.ev a.src{font-family:var(--mono);font-size:11px;color:var(--steel-500);text-decoration:underline;text-underline-offset:3px}
+.ev a.src:hover{color:var(--steel-900)}
+.ev a.find{font-family:var(--body);font-size:12.5px;font-weight:600;color:var(--steel-950);background:var(--signal);
+  padding:6px 11px;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.ev a.find:hover{background:var(--signal-hot)}
+.ev a.find svg{width:12px;height:12px;flex:0 0 auto}
+.feed-foot{padding:12px 15px;background:var(--paper);border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--steel-500);line-height:1.6}
+.feed-foot a{color:var(--steel-900)}
+
+/* contact */
+.form-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:36px}
+.f-full{grid-column:1/-1}
+.field label,.field .lbl{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--steel-500);margin-bottom:7px}
+.field .req{color:var(--fault)}
+.finp{width:100%;background:#fff;border:1px solid var(--line);padding:12px 13px;border-radius:2px;font-family:var(--body);font-size:15.5px;color:var(--steel-900)}
+.finp:focus{border-color:var(--steel-950);outline:none}
+.finp[aria-invalid="true"]{border-color:var(--fault);background:#FDF4F2}
+textarea.finp{min-height:118px;resize:vertical}
+select.finp{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#4C6270 50%),linear-gradient(135deg,#4C6270 50%,transparent 50%);background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.err{color:var(--fault);font-size:12.5px;margin-top:5px;display:none}
+.err[data-on="1"]{display:block}
+.phase-pick{display:flex;flex-wrap:wrap;gap:8px}
+.pp{background:#fff;border:1px solid var(--line);padding:9px 13px;font-size:14px;border-radius:2px;cursor:pointer;color:var(--steel-500)}
+.pp[aria-pressed="true"]{background:var(--steel-950);border-color:var(--steel-950);color:var(--signal)}
+.form-foot{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:8px}
+.btn-dark{background:var(--steel-950);color:#fff;border:0;padding:15px 30px;border-radius:2px;font-weight:600;cursor:pointer}
+.btn-dark:hover{background:var(--steel-800)}
+.form-foot small{color:var(--steel-500);font-size:13px;max-width:40ch}
+.sent{border:1px solid var(--steel-950);border-left:4px solid var(--live);padding:26px;margin-top:36px;display:none;background:#fff}
+.sent[data-on="1"]{display:block}
+.sent h3{font-size:22px;font-weight:700;font-stretch:110%;margin-bottom:10px}
+.sent p{color:var(--steel-500);margin-bottom:14px}
+.sent pre{background:var(--paper);border:1px solid var(--line);padding:14px;font-family:var(--mono);font-size:12.5px;overflow:auto;white-space:pre-wrap;color:var(--steel-700);margin:0 0 14px}
+@media (max-width:700px){.form-grid{grid-template-columns:1fr}}
+
+footer{background:var(--steel-950);color:#8FA4B0;padding:52px 0 40px;font-size:14px}
+.foot-in{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.foot-in a{color:#C6D2D8;text-decoration:none}
+.foot-in a:hover{color:var(--signal)}
+.foot-brand{font-family:var(--display);font-weight:700;font-stretch:112%;color:#fff;font-size:15px;margin-bottom:8px}
+.foot-legal{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:20px;font-size:12.5px;color:#5D7481;max-width:88ch}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="22" height="22" stroke="#E4B429" stroke-width="1.5"/>
+        <path d="M6 17 L11 7 L13 12.5 L18 7" stroke="#fff" stroke-width="1.7" fill="none" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-txt">OCCIDENTAL <em>Mission Critical</em></span>
+    </a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>We recruit for construction roles where speed is crucial.</h1>
+    <div class="hero-grid">
+      <div>
+        <p class="hero-lede">We're a startup US-based recruiting firm for mission critical work, and we recruit for roles across the build, from site selection through Level&nbsp;5 commissioning. We find people by picking up the phone and then going out to meet them. The ones we send you <strong>pass the technical screen and are still there at handover</strong>.</p>
+      </div>
+      <div class="plate">
+        <div class="pl-num">90</div>
+        <div class="pl-t">Day replacement guarantee</div>
+        <p class="pl-d">If someone we place leaves in the first three months, we refund your fee and find the replacement for free.</p>
+      </div>
+    </div>
+    <div class="busline">
+      <svg class="bus-svg" viewBox="0 0 1000 78" preserveAspectRatio="none" role="img" aria-label="Four delivery phases on a single bus line: assessment, design, engineering, construction and commissioning.">
+        <line class="bus-path" x1="20" y1="30" x2="980" y2="30"/>
+        <line class="bus-energize" x1="20" y1="30" x2="980" y2="30"/>
+        <g class="bus-node"><circle cx="20" cy="30" r="5"/><text x="20" y="52" text-anchor="start">PH 1</text><text class="bn-name" x="20" y="68" text-anchor="start">Assessment &amp; site selection</text></g>
+        <g class="bus-node"><circle cx="340" cy="30" r="5"/><text x="340" y="52" text-anchor="middle">PH 2</text><text class="bn-name" x="340" y="68" text-anchor="middle">Planning &amp; design</text></g>
+        <g class="bus-node"><circle cx="660" cy="30" r="5"/><text x="660" y="52" text-anchor="middle">PH 3</text><text class="bn-name" x="660" y="68" text-anchor="middle">Engineering &amp; detailed design</text></g>
+        <g class="bus-node"><circle cx="980" cy="30" r="5"/><text x="980" y="52" text-anchor="end">PH 4</text><text class="bn-name" x="980" y="68" text-anchor="end">Construction &amp; commissioning</text></g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap sheet">
+    <div class="sheet-rail"><b>G-010</b><span>The problem</span></div>
+    <div class="sheet-body">
+      <h2 class="h-sec">Most staffing firms are paid to fill roles, not to find durable long-term fits.</h2>
+      <p class="sec-lede">A lot of data center recruiting gets run out of offshore call centers where recruiters have a daily quota of resumes to send. They're selling volume, and it works fine for them, because when a hire falls apart it's your schedule that slips and your liquidated damages clause that gets tested, not theirs.</p>
+      <div class="ledger">
+        <div class="led-row"><div class="led-k"><i>01</i><span>Submissions built to a quota</span></div><p class="led-v">When someone's measured on how many resumes they send, a bad fit still counts toward the number. So they keep coming, and you keep reading them.</p></div>
+                <div class="led-row"><div class="led-k"><i>02</i><span>Early departures</span></div><p class="led-v">If the only reason someone took the job was the number, they'll leave when the next recruiter calls with a bigger one. You've already paid the fee, you've lost the ramp-up, and now you're hiring again in the middle of the build.</p></div>
+        <div class="led-row"><div class="led-k"><i>03</i><span>Disqualifying issues found late</span></div><p class="led-v">Badging, clearances, non-competes, and how much travel someone will actually accept tend to come up after the offer goes out, which is exactly when you have no time to start over.</p></div>
+      </div>
+      <div class="cmp">
+        <div>
+          <h4>The offshore quota model</h4>
+          <ul>
+            <li>Keyword matching off your job description</li>
+            <li>Scripted outreach from twelve time zones away</li>
+            <li>Nobody checks commissioning or controls depth</li>
+            <li>Fee is earned on day one, then they're done</li>
+            <li>Nobody ever meets the candidate</li>
+          </ul>
+        </div>
+        <div class="ours">
+          <h4>How we run a search</h4>
+          <ul>
+            <li>We source off real layoff and bankruptcy data</li>
+            <li>US based recruiters (Jack &amp; Nicholas)</li>
+            <li>Screened by someone who has worked a commissioning floor</li>
+            <li>Our fee stays at risk for 90 days</li>
+            <li>We meet people face to face before you see their name</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution" class="dark">
+  <div class="wrap sheet">
+    <div class="sheet-rail"><b>G-020</b><span>Our guarantee</span></div>
+    <div class="sheet-body">
+      <h2 class="h-sec">Our fee stays at risk for 90 days.</h2>
+      <p class="sec-lede">Early delivery is where the money is on these jobs, and you can't deliver early if the people who know the building keep walking out. So we take on some of that risk with you. If someone we placed leaves within three months, you get your fee back and we start the replacement search for free.</p>
+      <div class="gtee">
+        <div><b>Full fee returned</b><p>You get the money back, not a credit toward some future search you haven't agreed to.</p></div>
+        <div><b>Replacement search at no cost</b><p>We start over right away and eat the cost of doing it. You shouldn't have to pay twice to fill one seat.</p></div>
+        <div><b>End to end, across the chain of command</b><p>We hire technicians and we hire the people who run programs, and everyone gets screened the same way.</p></div>
+        <div><b>United States based, in person</b><p>No offshore call center. We're in your time zone, and we sit down with finalists before we send them to you.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASES -->
+<section id="phases">
+  <div class="wrap sheet">
+    <div class="sheet-rail"><b>D-200</b><span>Roles by phase</span></div>
+    <div class="sheet-body">
+      <h2 class="h-sec">Who we hire for, and when you'll need them.</h2>
+      <p class="sec-lede">These overlap in real life, which is why the bars run into each other. Click one to see who we hire for it.</p>
+      <div class="tl">
+        <div class="tl-scale"><span>MONTH 0</span><span>9</span><span>18</span><span>27</span><span>36</span></div>
+        <div class="tl-track" id="tlTrack"></div>
+        <div class="tl-panel" id="tlPanel"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="dark">
+  <div class="wrap sheet">
+    <div class="sheet-rail"><b>C-300</b><span>How we work</span></div>
+    <div class="sheet-body">
+      <h2 class="h-sec">Four steps, and we're still on the hook after they start.</h2>
+      <p class="sec-lede">We run it the same way whether it's a commissioning tech or a program director.</p>
+      <div class="steps">
+        <div class="step"><i>STEP 1</i><b>Intake with the hiring manager</b><p>We want time with whoever owns the schedule, not just HR. What does this person actually have to get done in their first 90 days?</p></div>
+        <div class="step"><i>STEP 2</i><b>Signal-led sourcing</b><p>Radar tells us which firms are shedding people. Then Jack or Nicholas calls them. No script, no queue.</p></div>
+        <div class="step"><i>STEP 3</i><b>Technical screen and in-person meeting</b><p>Someone who understands sequences of operation and integrated systems testing does the screening. Then we go meet the finalists in person.</p></div>
+        <div class="step"><i>STEP 4</i><b>Offer, start, and 90 days of accountability</b><p>We keep checking in while they ramp up. If they leave inside three months, you get your fee back and the replacement is on us.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCING THESIS: renewable EPC dislocation -->
+<section id="sourcing" class="radar-sec">
+  <div class="wrap sheet">
+    <div class="sheet-rail"><b>T-100</b><span>Sourcing thesis</span></div>
+    <div class="sheet-body">
+      <h2 class="h-sec">Despite the immense labor demand, there is underutilized talent in America right now.</h2>
+      <p class="sec-lede">We identify them systematically using data. The One Big Beautiful Bill Act, signed July 4, 2025, ended the residential 25D credit for anything installed from January 1, 2026, and gave wind and solar projects until July 4, 2026 to start construction if they wanted the 48E and 45Y credits. Renewable EPC firms had staffed up for a completely different schedule. Those crews are available now, and the work they were doing is a lot closer to a data hall than most hiring managers realize.</p>
+      <p class="sec-lede">None of this is a talent problem, it's a policy cycle. The superintendent who ran a 200 MW solar build didn't get worse at his job in July. We go looking wherever a schedule just broke, which is usually months before those people turn up on a job board.</p>
+
+      <div class="statstrip">
+        <div>
+          <b>517</b><span>Jobs cut at Blue Ridge Power, a utility-scale solar EPC, as its parent wound the company down</span>
+          <a href="https://pv-magazine-usa.com/2025/09/23/solar-construction-firm-blue-ridge-power-issues-mass-worker-layoff-in-north-carolina/" target="_blank" rel="noopener">pv magazine USA</a>
+        </div>
+        <div>
+          <b>1,691</b><span>US solar workers laid off in 2025 in state WARN notices alone, which do not capture every job lost</span>
+          <a href="https://www.solarpowerworldonline.com/2026/01/solar-layoffs-and-closures-run-rampant-in-trumps-first-year-back/" target="_blank" rel="noopener">Solar Power World</a>
+        </div>
+        <div>
+          <b>33,000</b><span>Construction-phase jobs tied to canceled solar projects</span>
+          <a href="https://www.renewableenergyworld.com/energy-business/one-step-forward-one-step-back-clean-energy-jobs-growth-stifled-by-canceled-projects/" target="_blank" rel="noopener">Renewable Energy World</a>
+        </div>
+        <div>
+          <b>216</b><span>Major clean energy projects canceled, closed or downsized since January 2025</span>
+          <a href="https://e2.org/releases/cancellations-impact-report-2026/" target="_blank" rel="noopener">E2</a>
+        </div>
+      </div>
+
+
+      <h3 class="h-sub" style="margin-top:56px">Human Capital Radar</h3>
+      <div class="radar-grid" style="margin-top:20px">
+        <div class="radar-copy">
+          <p>We built a tool (Human Capital Radar) to identify talent that has been lost to cyclical sector slowdowns, like renewables, and then we reach out to them. It watches bankruptcy dockets on PACER and state WARN notices, flags the renewable EPC and installer filings, and sorts the affected workforce into the MEP phases our clients hire for.</p>
+          <p>Each one opens straight into that employer's staff list, and we start calling from there, usually within 48 hours of the filing.</p>
+          <p class="mini-note">We only publish company-level public records here. We don't list candidates by name, and we don't tell anyone that a particular person is looking.</p>
+        </div>
+        <div class="feed">
+          <div class="feed-head">
+            <b><span class="dot" aria-hidden="true"></span> Renewable EPC dislocation events</b>
+            <span id="feedCount"></span>
+          </div>
+          <div class="filt" id="filt">
+            <button data-f="all" aria-pressed="true">All</button>
+            <button data-f="solar" aria-pressed="false">Solar</button>
+            <button data-f="wind" aria-pressed="false">Wind</button>
+            <button data-f="ch11" aria-pressed="false">Chapter 11</button>
+          </div>
+          <div id="feed"></div>
+          <div class="feed-foot">
+            Signal sources: PACER bankruptcy dockets · state WARN filings including the
+            <a href="https://edd.ca.gov/en/jobs_and_training/Layoff_Services_WARN/" target="_blank" rel="noopener">California EDD</a>,
+            <a href="https://www.twc.texas.gov/data-reports/warn-notice" target="_blank" rel="noopener">Texas Workforce Commission</a>,
+            <a href="https://www.pa.gov/agencies/dli/programs-services/workforce-development-home/warn-requirements/warn-notices" target="_blank" rel="noopener">Pennsylvania L&amp;I</a> and
+            <a href="https://www.mass.gov/info-details/worker-adjustment-and-retraining-notification-act-warn-layoff-and-closure-updates" target="_blank" rel="noopener">Massachusetts EOLWD</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap sheet">
+    <div class="sheet-rail"><b>X-400</b><span>Start a search</span></div>
+    <div class="sheet-body">
+      <h2 class="h-sec">Tell us what the schedule needs.</h2>
+      <p class="sec-lede">Send us the roles and the dates. Jack or Nicholas will get back to you inside a business day with a plan and a straight answer about how hard that skill set is to find right now.</p>
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="cName">Name <span class="req">*</span></label><input class="finp" id="cName" autocomplete="name"><div class="err" id="e-cName">Enter your name.</div></div>
+          <div class="field"><label for="cCompany">Company <span class="req">*</span></label><input class="finp" id="cCompany" autocomplete="organization"><div class="err" id="e-cCompany">Enter your company.</div></div>
+          <div class="field"><label for="cEmail">Work email <span class="req">*</span></label><input class="finp" id="cEmail" type="email" autocomplete="email"><div class="err" id="e-cEmail">Enter a valid work email address.</div></div>
+          <div class="field"><label for="cPhone">Phone</label><input class="finp" id="cPhone" type="tel" autocomplete="tel"></div>
+          <div class="field f-full">
+            <span class="lbl">Phases you are hiring for <span class="req">*</span></span>
+            <div class="phase-pick" id="phasePick"></div>
+            <div class="err" id="e-phase">Select at least one phase.</div>
+          </div>
+          <div class="field"><label for="cCount">Number of hires</label>
+            <select class="finp" id="cCount"><option>1</option><option>2–5</option><option>6–15</option><option>16+</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="cWhen">Start date needed</label>
+            <select class="finp" id="cWhen"><option>Immediately</option><option>Within 30 days</option><option>30–90 days</option><option>Next quarter</option><option>Planning ahead</option></select></div>
+          <div class="field f-full"><label for="cNotes">Roles, location, and anything else we should know</label>
+            <textarea class="finp" id="cNotes" placeholder="e.g. Two commissioning engineers and a CxA lead for a 48 MW build outside Columbus. Level 4 starts in March."></textarea></div>
+        </div>
+        <div class="form-foot">
+          <button class="btn-dark" type="submit">Send request</button>
+          <small>We'll reply within a business day, and we only use your details for this search.</small>
+        </div>
+      </form>
+      <div class="sent" id="sent" role="status">
+        <h3>Request ready to send</h3>
+        <p>There's no server hooked up to this site yet, so nothing got sent. Copy what's below, or use the email link.</p>
+        <pre id="sentBody"></pre>
+        <a class="btn btn-primary" id="mailLink" href="#">Open in email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <div><div class="foot-brand">OCCIDENTAL MISSION CRITICAL</div><div>Recruiting for the mission critical lifecycle.<br>United States.</div></div>
+    </div>
+    <div class="foot-legal">
+      © <span id="yr"></span> Occidental Mission Critical. Human Capital Radar draws on public company-level records, meaning federal bankruptcy dockets and state WARN filings. It does not publish information about individual candidates. Event summaries link to their sources; verify current case status on PACER before acting.
+    </div>
+  </div>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ===== RADAR: real, sourced company-level events ===== */
+const EVENTS = [
+  {
+    date:"2026-07-06", co:"TPI Composites, Inc.", type:"ch11", sector:"wind", tag:"Chapter 11",
+    what:"Wind blade manufacturer that held roughly 27% of the global onshore wind blade market outside China, with about $1.3 billion in net sales and 6,525 blades produced in 2024. Filed Chapter 11 with 21 affiliates in August 2025; a Texas judge confirmed a liquidating plan on July 1, 2026 and the business emerged July 6 under Energy Capital Partners, retaining Iowa and Juárez manufacturing plus global field services. Everyone outside that perimeter came loose.",
+    meta:"U.S. Bankruptcy Court, Southern District of Texas · Scottsdale, AZ",
+    roles:["Composite and structural technicians","QA and inspection","Field service technicians"],
+    src:"https://ir.tpicomposites.com/news-events/press-releases/tpi-composites-successfully-emerges-from-chapter-11-under-new-ownership-reaffirms-long-term-commitment-to-wind/2a2fa45c-8cd4-4d9e-8d48-621492234f05", srcName:"TPI Composites investor relations"
+  },
+  {
+    date:"2026-02-01", co:"Freedom Forever", type:"ch11", sector:"solar", tag:"Chapter 11",
+    what:"Roughly 1,600 employees were furloughed the same morning the filing was announced, with paychecks delayed indefinitely. The company had already cut about 20 percent of its workforce and exited more than ten state markets earlier in 2026.",
+    meta:"Case number 26-10522 · multi-state installer network",
+    roles:["Electrical installers","Crew leads","Field supervisors"],
+    src:"https://solarequitysolutions.com/guide/solar-company-bankruptcies/", srcName:"Solar bankruptcy tracker"
+  },
+  {
+    date:"2026-01-28", co:"Enphase Energy", type:"layoff", sector:"solar", tag:"Mass layoff",
+    what:"Announced a restructuring cutting about 6 percent of its workforce, roughly 160 employees, attributing the reduction to the end of the Residential Clean Energy Tax Credit and the resulting fall in demand.",
+    meta:"Publicly announced restructuring · Fremont, CA",
+    roles:["Power electronics engineers","Systems and firmware engineers","Technical support"],
+    src:"https://climatepower.us/news/round-up-four-more-clean-energy-projects-laid-off-workers-or-delayed-plans-last-week-thanks-to-trumps-war-on-clean-energy/", srcName:"Layoff round-up"
+  },
+  {
+    date:"2025-11-18", co:"Blue Ridge Power", type:"layoff", sector:"solar", tag:"Wind-down",
+    what:"This is the one we'd point you at first. A utility-scale solar EPC and subsidiary of developer Pine Gate Renewables, Blue Ridge Power filed two WARN notices with the North Carolina Department of Commerce cutting 517 of its 700-plus employees, 348 in Fayetteville and 169 at the Asheville headquarters, as its parent wound the company down. The firm had installed 1.15 GW in 2023 alone, ranked eleventh on Solar Power World's 2024 Top Solar Contractors list, and built roughly 8 GW nationwide across 14 states. President David Sanders, whose own role was on the termination list, cited evolving regulatory and capital market conditions.",
+    meta:"NC Dept. of Commerce WARN · Buncombe and Cumberland counties",
+    roles:["Construction managers","Site superintendents","MV electricians","Commissioning and performance test","Procurement"],
+    src:"https://www.solarpowerworldonline.com/2025/09/blue-ridge-power-laying-off-500-people/", srcName:"Solar Power World"
+  },
+  {
+    date:"2025-10-15", co:"PosiGen", type:"layoff", sector:"solar", tag:"Mass layoff",
+    what:"WARN filings recorded 293 employees laid off across Connecticut, Louisiana and Pennsylvania at an installer built around serving low-to-moderate income customers.",
+    meta:"State WARN filings · CT, LA, PA",
+    roles:["Installation crews","Field operations","Site assessors"],
+    src:"https://www.solarpowerworldonline.com/2026/01/solar-layoffs-and-closures-run-rampant-in-trumps-first-year-back/", srcName:"Solar Power World"
+  },
+  {
+    date:"2025-09-30", co:"Purelight Power", type:"ch7", sector:"solar", tag:"Wind-down"
+    ,what:"A full wind-down rather than a reorganization, leaving no successor entity. Management pointed to H.R.1 cutting the 25D residential credit and tightening how it could be claimed. A full wind-down puts the whole workforce on the market at once instead of in stages.",
+    meta:"Complete cessation of operations · Pacific Northwest and Midwest",
+    roles:["Installation crews","Electricians","Operations staff"],
+    src:"https://solardisclosure.io/solar-installer-bankruptcy-tracker.html", srcName:"Solar installer bankruptcy tracker"
+  },
+  {
+    date:"2025-06-09", co:"Sunnova Energy", type:"ch11", sector:"solar", tag:"Chapter 11",
+    what:"The national residential solar leasing company cut 300 people, about 15 percent of staff, citing high-interest financing and policy uncertainty, before filing for bankruptcy. Sunnova sat alongside Solar Mosaic and Meyer Burger in a cluster of filings that removed financing partners the wider installer base depended on.",
+    meta:"Chapter 11 · Houston, TX",
+    roles:["Project and program managers","Asset and O&M management","Field service"],
+    src:"https://www.energysage.com/news/congress-passes-bill-ending-residential-solar-tax-credit/", srcName:"EnergySage"
+  }
+];
+
+
+let filt = "all";
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmt(d){const p=d.split("-");return MONTHS[+p[1]-1]+" "+(+p[2])+", "+p[0];}
+function matches(e){
+  if(filt==="all") return true;
+  if(filt==="solar"||filt==="wind") return e.sector===filt;
+  return e.type===filt;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+/* People list themselves under a trading name, not a legal entity name.
+   Prefer the parenthetical brand; otherwise strip the corporate suffix. */
+function cleanCo(name){
+  const brand = name.match(/\(([^)]+)\)/);
+  if(brand) return brand[1].trim();
+  return name.replace(/,?\s*(L\.?L\.?C\.?|Inc\.?|Corp\.?|Ltd\.?|Co\.?)\s*$/i,"").trim();
+}
+/* Opens LinkedIn's people search scoped to the employer. The recruiter is
+   already authenticated, so results are live rather than a stale snapshot. */
+function peopleSearch(name){
+  return "https://www.linkedin.com/search/results/people/?keywords="
+    + encodeURIComponent('"' + cleanCo(name) + '"');
+}
+
+function renderFeed(){
+  const list = EVENTS.filter(matches);
+  $("#feedCount").textContent = list.length + (list.length===1?" EVENT SHOWN":" EVENTS SHOWN");
+  $("#feed").innerHTML = list.length ? list.map(e => `
+    <article class="ev">
+      <div class="ev-top">
+        <span class="ev-date">${fmt(e.date)}</span>
+        <span class="ev-co">${esc(e.co)}</span>
+        <span class="ev-tag t-${e.type}">${e.tag}</span>
+      </div>
+      <p>${esc(e.what)}</p>
+      <div class="ev-meta">${esc(e.meta)}</div>
+      <div class="ev-roles">${e.roles.map(r=>`<span>${esc(r)}</span>`).join("")}</div>
+      <div class="ev-acts">
+        <a class="find" href="${peopleSearch(e.co)}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4z"/></svg>
+          Find people at ${esc(cleanCo(e.co))}
+        </a>
+        <a class="src" href="${e.src}" target="_blank" rel="noopener">Filing source: ${esc(e.srcName)}</a>
+      </div>
+    </article>`).join("")
+    : `<div style="padding:38px 15px;text-align:center;color:var(--steel-500);font-size:14.5px">No events of this type in the current window. Select All to see everything Radar is tracking.</div>`;
+}
+$("#filt").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  filt = b.dataset.f;
+  document.querySelectorAll("#filt button").forEach(x=>x.setAttribute("aria-pressed", x===b ? "true":"false"));
+  renderFeed();
+});
+
+
+/* ===== TIMELINE ===== */
+const PHASES = [
+  {n:1,name:"Assessment and site selection",start:0,end:9,
+   desc:"This is where you find out whether the site can carry the load and get through its approvals. Mistakes made here don't show up until much later, usually as an interconnection date nobody can move.",
+   roles:[["Site selection specialists","Screen markets on power availability, latency, land, and tax posture."],
+          ["Utility and power analysts","Model load ramps and secure interconnection queue position."],
+          ["Environmental and risk assessors","Phase I and II ESA, wetlands, seismic, and flood exposure."],
+          ["Pre-construction project managers","Hold cost and schedule discipline before anyone mobilizes."],
+          ["Land acquisition and planning consultants","Assemble parcels and clear entitlement risk early."]]},
+  {n:2,name:"Planning and design",start:6,end:16,
+   desc:"Design intent comes together and the permitting path gets locked in. The people you hire here choose the topology you're going to live with for the next twenty years.",
+   roles:[["Design project managers","Run a multi-discipline design team to a fixed milestone set."],
+          ["Mechanical design engineers","Cooling topology, from chilled water to liquid-to-chip."],
+          ["Electrical design engineers","Utility service, medium voltage distribution, UPS, and generator plant."],
+          ["Civil, structural and architectural support","Site works, foundations, and shell coordination."],
+          ["Compliance and permitting specialists","AHJ, air permits, and utility approvals on the critical path."]]},
+  {n:3,name:"Engineering and detailed design",start:12,end:22,
+   desc:"Drawings go to issued-for-construction, long-lead equipment gets ordered, and someone writes the control philosophy that commissioning is going to test two years from now.",
+   roles:[["Mechanical and electrical engineers","Take design intent through to issued-for-construction."],
+          ["Controls engineers","BMS, EPMS, and sequences of operation that survive Level 4."],
+          ["Systems integrators","Tie disparate control platforms into one operable building."],
+          ["BIM and CAD technicians","Clash-free models the trades can actually build from."],
+          ["Procurement and specification specialists","Lock long-lead switchgear, chillers, and generators."]]},
+  {n:4,name:"Construction and commissioning",start:18,end:36,
+   desc:"This is where the schedule gets won or lost. An empty commissioning seat costs real money at this stage, because early delivery is what you're getting paid on.",
+   roles:[["Construction managers","Own cost, schedule, and trade sequencing in the field."],
+          ["Site supervisors","Daily execution, safety, and quality at the work face."],
+          ["Installation specialists, electrical and mechanical","Terminations, busway, piping, and equipment setting."],
+          ["Commissioning managers","Run Level 1 through Level 5 to a clean, witnessed handover."],
+          ["Commissioning engineers and technicians","Functional testing, integrated systems test, and load bank campaigns."]]}
+];
+const TOTAL = 36;
+let activePhase = 4;
+function drawTimeline(){
+  $("#tlTrack").innerHTML = PHASES.map(p=>{
+    const left=(p.start/TOTAL)*100, w=((p.end-p.start)/TOTAL)*100;
+    return `<button class="tl-bar" data-p="${p.n}" aria-pressed="${p.n===activePhase}">
+      <span class="tl-fill" style="left:${left}%;width:${w}%">
+        <span class="tl-ph">PH ${p.n}</span>
+        <span class="tl-nm">${p.name}</span>
+        <span class="tl-mo">MO ${p.start}–${p.end}</span>
+      </span></button>`;
+  }).join("");
+  const p = PHASES.find(x=>x.n===activePhase);
+  $("#tlPanel").innerHTML = `
+    <div class="tl-panel-h">
+      <h3>Phase ${p.n} — ${p.name}</h3>
+      <span class="tl-when">MONTH ${p.start}–${p.end} · ${p.roles.length} ROLE FAMILIES</span>
+    </div>
+    <p class="tl-desc">${p.desc}</p>
+    <div class="roles">${p.roles.map(r=>`<div class="role"><b>${r[0]}</b><p>${r[1]}</p></div>`).join("")}</div>`;
+}
+$("#tlTrack").addEventListener("click", e=>{
+  const b=e.target.closest(".tl-bar"); if(!b) return;
+  activePhase = +b.dataset.p; drawTimeline();
+});
+
+/* ===== CONTACT ===== */
+const PHASE_LABELS=["Phase 1 · Assessment","Phase 2 · Design","Phase 3 · Engineering","Phase 4 · Construction"];
+let picked = new Set();
+$("#phasePick").innerHTML = PHASE_LABELS.map((l,i)=>`<button type="button" class="pp" data-p="${i+1}" aria-pressed="false">${l}</button>`).join("");
+$("#phasePick").addEventListener("click", e=>{
+  const b=e.target.closest(".pp"); if(!b) return;
+  const n=+b.dataset.p, on=b.getAttribute("aria-pressed")==="true";
+  b.setAttribute("aria-pressed", on?"false":"true");
+  on ? picked.delete(n) : picked.add(n);
+  if(picked.size) $("#e-phase").removeAttribute("data-on");
+});
+function showErr(id,on){const e=$("#e-"+id);if(e)on?e.setAttribute("data-on","1"):e.removeAttribute("data-on");const f=$("#"+id);if(f)f.setAttribute("aria-invalid",on?"true":"false");}
+$("#contactForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  let ok=true;
+  const name=$("#cName").value.trim(), co=$("#cCompany").value.trim(), em=$("#cEmail").value.trim();
+  if(!name){showErr("cName",true);ok=false}else showErr("cName",false);
+  if(!co){showErr("cCompany",true);ok=false}else showErr("cCompany",false);
+  if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(em)){showErr("cEmail",true);ok=false}else showErr("cEmail",false);
+  if(!picked.size){$("#e-phase").setAttribute("data-on","1");ok=false}
+  if(!ok){const bad=document.querySelector('[aria-invalid="true"], .err[data-on="1"]');if(bad)bad.scrollIntoView({block:"center"});return;}
+  const phases=[...picked].sort().map(n=>PHASE_LABELS[n-1]).join(", ");
+  const body=`Name:      ${name}
+Company:   ${co}
+Email:     ${em}
+Phone:     ${$("#cPhone").value.trim()||"—"}
+Phases:    ${phases}
+Hires:     ${$("#cCount").value}
+Start:     ${$("#cWhen").value}
+
+Notes:
+${$("#cNotes").value.trim()||"—"}`;
+  $("#sentBody").textContent = body;
+  $("#mailLink").href = "mailto:search@occidentalmc.com?subject="+encodeURIComponent("Search request — "+co)+"&body="+encodeURIComponent(body);
+  $("#sent").setAttribute("data-on","1");
+  $("#contactForm").style.display="none";
+  $("#sent").scrollIntoView({behavior: reduced?"auto":"smooth", block:"center"});
+});
+
+$("#yr").textContent = new Date().getFullYear();
+drawTimeline();
+renderFeed();
+</script>
+</body>
+</html>
